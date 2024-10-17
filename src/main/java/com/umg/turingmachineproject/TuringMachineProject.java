@@ -4,7 +4,9 @@
 package com.umg.turingmachineproject;
 
 import com.umg.turingmachineproject.model.State;
+import com.umg.turingmachineproject.model.Transition;
 import com.umg.turingmachineproject.model.TuringMachine;
+import java.util.List;
 
 /**
  *
@@ -26,6 +28,10 @@ public class TuringMachineProject {
         machine.setInitialState(q0);
         machine.setFinalState(q2);
 
+        machine.addSymbol('a');
+        machine.addSymbol('b');
+        machine.addSymbol('m');
+
         // Agregar estados a la máquina
         machine.addState(q0);
         machine.addState(q1);
@@ -35,11 +41,12 @@ public class TuringMachineProject {
         machine.addTransition("q0", "q1", 'a', 'b', 'R'); // Cambia 'a' por 'b' y va a la derecha
         machine.addTransition("q1", "q2", 'b', 'a', 'R'); // Cambia 'b' por 'a' y va a la derecha
         machine.addTransition("q2", "q2", 'b', 'a', 'R'); // Cambia 'b' por 'a' y va a la derecha
-        machine.addTransition("q2", "q2", 'a', 'b', 'R'); // Cambia 'b' por 'a' y va a la derecha
+        machine.addTransition("q2", "q2", 'a', 'b', 'R'); // Cambia 'b' por 'a' y va a la derecha  
+        machine.addTransition("q2", "q2", 'm', 'b', 'L'); // Cambia 'b' por 'a' y va a la derecha
 
         machine.addTransition("q2", "q2", '\0', '\0', 'R'); // Transición al vacío en el estado de aceptación
 
-        machine.execute("abbaa");
+        machine.execute("abbama");
 
         while (machine.canProceed()) {
             System.out.println(machine.toString());
@@ -47,8 +54,10 @@ public class TuringMachineProject {
 
         }
         System.out.println(machine.toString());
-        
-        
 
+        List<Transition> transitions = machine.getAllTransitions();
+        for (Transition transition : transitions) {
+            System.out.println(transition);
+        }
     }
 }

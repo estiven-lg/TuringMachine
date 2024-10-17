@@ -1,6 +1,6 @@
 package com.umg.turingmachineproject.model;
 
-class Transition {
+public class Transition {
 
     private final char id;
     private final char readSymbol;

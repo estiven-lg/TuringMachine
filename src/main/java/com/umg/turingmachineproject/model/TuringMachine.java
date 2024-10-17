@@ -48,6 +48,39 @@ public class TuringMachine {
         return finalState;
     }
 
+    public State getCurrentState() {
+        return currentState;
+    }
+
+    public List<Character> getTape() {
+        return tape;
+    }
+
+    public int getHeadPosition() {
+        return headPosition;
+    }
+    
+    
+
+    // obtener stados dentro de la maquina
+    public List<State> getStatesList() {
+        return new ArrayList<>(states.values());
+    }
+
+    public List<Character> getAlphabet() {
+        return alphabet;
+    }
+
+    public List<Transition> getAllTransitions() {
+        List<Transition> allTransitions = new ArrayList<>();
+
+        for (State state : states.values()) {
+            allTransitions.addAll(state.getTransitionsList());
+        }
+
+        return allTransitions;
+    }
+
     // Método para agregar estados
     public void addState(State state) {
         if (!states.containsKey(state.getId())) {
@@ -96,7 +129,7 @@ public class TuringMachine {
         }
 
         // si este simbolo no esta en el alfabeto
-        if (alphabet.contains(tape.get(headPosition))) {
+        if (!alphabet.contains(tape.get(headPosition))) {
             System.out.println("este simbolo no esta en el alfabeto");
             return false;
         }
