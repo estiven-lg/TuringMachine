@@ -17,6 +17,7 @@ public class TuringMachineProject {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
+        // ejemplo de uso
         TuringMachine machine = TuringMachine.getInstance();
 
         // Crear estados
@@ -59,5 +60,6 @@ public class TuringMachineProject {
         for (Transition transition : transitions) {
             System.out.println(transition);
         }
+        //prueba 
     }
 }
