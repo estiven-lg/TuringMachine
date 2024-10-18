@@ -7,6 +7,7 @@ import com.umg.turingmachineproject.model.State;
 import com.umg.turingmachineproject.model.Transition;
 import com.umg.turingmachineproject.model.TuringMachine;
 import java.util.List;
+import view.Ingreso;
 
 /**
  *
@@ -61,5 +62,7 @@ public class TuringMachineProject {
             System.out.println(transition);
         }
         //prueba 
+        Ingreso ventanaIngreso = new Ingreso();
+        ventanaIngreso.setVisible(true);
     }
 }
