@@ -27,6 +27,7 @@ public class Ingreso extends javax.swing.JFrame {
         llenarComboSimbolo();
     }
     TuringMachine machine = TuringMachine.getInstance();
+    EstadoDatos estadoDatosView = new EstadoDatos();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -356,7 +357,7 @@ public class Ingreso extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cmbSimboloActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -403,6 +404,8 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void btnEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluarActionPerformed
         machine.execute(txtCadenaEvaluar.getText());
+        estadoDatosView.setVisible(true);
+        //estadoDatosView.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnEvaluarActionPerformed
 
     private void txtAgregaSimboloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgregaSimboloActionPerformed
