@@ -46,21 +46,21 @@ public class TuringMachineProject {
         machine.addTransition("q2", "q2", 'a', 'b', 'R'); // Cambia 'b' por 'a' y va a la derecha  
         machine.addTransition("q2", "q2", 'm', 'b', 'L'); // Cambia 'b' por 'a' y va a la derecha
 
-        machine.addTransition("q2", "q2", '\0', '\0', 'R'); // Transición al vacío en el estado de aceptación
+        machine.addTransition("q2", "q2", TuringMachine.blankSymbol, 'a', 'R'); // Transición al vacío en el estado de aceptación
 
-        machine.execute("abbama");
+//        machine.execute("abbama");
 
-        while (machine.canProceed()) {
-            System.out.println(machine.toString());
-            machine.nextStep();
+//        while (machine.canProceed()) {
+//            System.out.println(machine.toString());
+//            machine.nextStep();
+//
+//        }
+//        System.out.println(machine.toString());
 
-        }
-        System.out.println(machine.toString());
-
-        List<Transition> transitions = machine.getAllTransitions();
-        for (Transition transition : transitions) {
-            System.out.println(transition);
-        }
+//        List<Transition> transitions = machine.getAllTransitions();
+//        for (Transition transition : transitions) {
+//            System.out.println(transition);
+//        }
         //prueba 
         Ingreso ventanaIngreso = new Ingreso();
         ventanaIngreso.setVisible(true);

@@ -86,6 +86,8 @@ public class Ingreso extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setAutoscrolls(true);
+
         jLabel1.setText("Agrega los estados de tú automata");
 
         txtAgregaEstado.addActionListener(new java.awt.event.ActionListener() {
@@ -225,7 +227,7 @@ public class Ingreso extends javax.swing.JFrame {
                                                     .addGap(18, 18, 18)
                                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(cmbEstadoFinal, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(btnAgregarEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))))
+                                                        .addComponent(btnAgregarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 115, Short.MAX_VALUE))))
                                             .addGap(56, 56, 56)
                                             .addComponent(lblEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -405,6 +407,7 @@ public class Ingreso extends javax.swing.JFrame {
     private void btnEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluarActionPerformed
         machine.execute(txtCadenaEvaluar.getText());
         estadoDatosView.setVisible(true);
+        estadoDatosView.actualizarDatos();
         //estadoDatosView.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnEvaluarActionPerformed
 

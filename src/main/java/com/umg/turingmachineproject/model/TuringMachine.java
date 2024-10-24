@@ -9,7 +9,7 @@ public class TuringMachine {
 
     private int headPosition;
     private final int limitEmptySpaces = 50;
-    private final char blankSymbol = '▢';
+    public static final char blankSymbol = '▢';
     List<Character> tape = new ArrayList<>();
     private final List<Character> alphabet = new ArrayList<>();
     private final Map<String, State> states = new HashMap<>();
@@ -56,11 +56,13 @@ public class TuringMachine {
         return tape;
     }
 
+    public String getStringTape() {
+        return "▢▢▢▢▢" + tape + "▢▢▢▢▢";
+    }
+
     public int getHeadPosition() {
         return headPosition;
     }
-    
-    
 
     // obtener stados dentro de la maquina
     public List<State> getStatesList() {
@@ -114,7 +116,7 @@ public class TuringMachine {
         for (char c : input.toCharArray()) {
             tape.add(c);
         }
-
+        System.out.println("initial:" + initialState);
         this.currentState = initialState;
         headPosition = 0;
     }
@@ -145,6 +147,11 @@ public class TuringMachine {
 
     // retorna un booleano,que indica si el automata esta en un estado de aceptacion
     public boolean isValidInput() {
+
+        if (currentState == null) {
+            return false;
+        }
+
         if (currentState.equals(finalState)) {
             return false;
         }
@@ -158,6 +165,10 @@ public class TuringMachine {
 
     // retorna una respuesta del estado del automata
     public String getValidationResult() {
+        if (currentState == null) {
+            return "aun no empieza";
+        }
+
         if (currentState.equals(finalState)) {
             return "no termino en estado final";
         }

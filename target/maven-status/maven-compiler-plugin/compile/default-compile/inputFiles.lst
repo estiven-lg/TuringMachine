@@ -1,5 +1,6 @@
-C:\Users\pluis\OneDrive\Documentos\GitHub\TuringMachine\src\main\java\com\umg\turingmachineproject\model\TuringMachine.java
-C:\Users\pluis\OneDrive\Documentos\GitHub\TuringMachine\src\main\java\com\umg\turingmachineproject\model\State.java
-C:\Users\pluis\OneDrive\Documentos\GitHub\TuringMachine\src\main\java\com\umg\turingmachineproject\TuringMachineProject.java
-C:\Users\pluis\OneDrive\Documentos\GitHub\TuringMachine\src\main\java\com\umg\turingmachineproject\model\Transition.java
-C:\Users\pluis\OneDrive\Documentos\GitHub\TuringMachine\src\main\java\view\Ingreso.java
+/home/estiven/NetBeansProjects/turingMachineProject/src/main/java/com/umg/turingmachineproject/TuringMachineProject.java
+/home/estiven/NetBeansProjects/turingMachineProject/src/main/java/com/umg/turingmachineproject/model/State.java
+/home/estiven/NetBeansProjects/turingMachineProject/src/main/java/com/umg/turingmachineproject/model/Transition.java
+/home/estiven/NetBeansProjects/turingMachineProject/src/main/java/com/umg/turingmachineproject/model/TuringMachine.java
+/home/estiven/NetBeansProjects/turingMachineProject/src/main/java/view/EstadoDatos.java
+/home/estiven/NetBeansProjects/turingMachineProject/src/main/java/view/Ingreso.java
